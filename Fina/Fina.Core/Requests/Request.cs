@@ -1,5 +1,3 @@
-using System;
-
 namespace Fina.Core.Requests;
 
 public abstract class Request

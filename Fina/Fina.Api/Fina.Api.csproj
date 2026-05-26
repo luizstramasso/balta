@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
+    <ProjectReference Include="../Fina.Web/Fina.Web.csproj" />
     <ProjectReference Include="..\Fina.Core\Fina.Core.csproj" />
   </ItemGroup>
 

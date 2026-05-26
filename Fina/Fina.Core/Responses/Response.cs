@@ -1,19 +1,21 @@
-using System;
 using System.Text.Json.Serialization;
 
 namespace Fina.Core.Responses;
 
-public class Response<TData>
+public abstract class Response<TData>
 {
     private int _statusCode = Configuration.DefaultStatusCode;
 
     [JsonConstructor]
     public Response() => _statusCode = Configuration.DefaultStatusCode;
 
-    public Response(TData data, int StatusCode = Configuration.DefaultStatusCode, string? message = null)
+    public Response(
+        TData? data,
+        int statusCode = Configuration.DefaultStatusCode,
+        string? message = null)
     {
         Data = data;
-        _statusCode = StatusCode;
+        _statusCode = statusCode;
         Message = message;
     }
 

@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using Fina.Core.Enums;
-using Fina.Core.Models;
 
 namespace Fina.Core.Requests.Transactions;
 
