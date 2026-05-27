@@ -6,9 +6,10 @@ public class UpdateCategoryRequest : Request
 {
     public long Id { get; set; }
     [Required(ErrorMessage = "Título inválido.")]
-    [MaxLength(100, ErrorMessage = "O título deve conter no máximo 100 caracteres.")]
+    [MaxLength(80, ErrorMessage = "O título deve conter no máximo 80 caracteres.")]
     public string Title { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "Descrição inválida.")]
+    [MaxLength(255, ErrorMessage = "A descrição deve conter no máximo 255 caracteres.")]
     public string? Description { get; set; }
 }

@@ -6,6 +6,7 @@ namespace Fina.Core.Requests.Transactions;
 public class CreateTransactionRequest : Request
 {
     [Required(ErrorMessage = "Título inválido.")]
+    [MaxLength(80, ErrorMessage = "O título deve conter no máximo 80 caracteres.")]
     public string Title { get; set; } = null!;
 
     [Required(ErrorMessage = "Tipo inválido.")]
