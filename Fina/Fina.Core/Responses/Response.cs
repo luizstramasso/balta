@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace Fina.Core.Responses;
 
-public abstract class Response<TData>
+public class Response<TData>
 {
     private int _statusCode = Configuration.DefaultStatusCode;
 

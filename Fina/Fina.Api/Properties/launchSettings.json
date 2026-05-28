@@ -7,8 +7,7 @@
       "launchBrowser": true,
       "applicationUrl": "http://localhost:5050",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "ConnectionStrings__DefaultConnection": "Host=localhost;Port=54857;Database=FinaApp;Username=FinaApp;Password=PostFina@123"
+        "ASPNETCORE_ENVIRONMENT": "Development"
       }
     }
   },

@@ -1,5 +1,6 @@
-using Fina.Api.Data;
-using Microsoft.EntityFrameworkCore;
+using Fina.Api;
+using Fina.Api.Common.Api;
+using Fina.Api.Endpoints;
 
 public partial class Program
 {
@@ -7,14 +8,19 @@ public partial class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddDbContextPool<AppDataContext>(
-            opt => opt
-                .UseNpgsql(@"Host=localhost;Port=54857;Database=FinaApp;Username=FinaApp;Password=PostFina@123;TrustServerCertificate=True")
-                .UseSnakeCaseNamingConvention());
+        builder.AddConfiguration();
+        builder.AddDataContext();
+        builder.AddCrossOrigin();
+        builder.AddDocumentation();
+        builder.AddHandlers();
 
         var app = builder.Build();
 
-        app.MapGet("/", () => "Hello World!");
+        if (app.Environment.IsDevelopment())
+            app.ConfigureDevEnvironment();
+
+        app.UseCors(ApiConfiguration.CorsPolicyName);
+        app.MapEndpoints();
 
         app.Run();
     }

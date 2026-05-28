@@ -14,7 +14,7 @@ public class UpdateTransactionRequest : Request
     public ETransactionType Type { get; set; }
 
     [Required(ErrorMessage = "Valor inválido.")]
-    public decimal? Amount { get; set; }
+    public decimal Amount { get; set; }
 
     [Required(ErrorMessage = "Categoria inválida.")]
     public long CategoryId { get; set; }
