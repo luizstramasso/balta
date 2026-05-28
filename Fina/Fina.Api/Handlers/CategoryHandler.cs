@@ -13,6 +13,7 @@ public class CategoryHandler(AppDataContext context) : ICategoryHandler
 {
     public async Task<Response<Category?>> CreateAsync(CreateCategoryRequest request)
     {
+        await Task.Delay(10000);
         var category = new Category
         {
             Title = request.Title,
